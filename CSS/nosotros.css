@@ -1,0 +1,335 @@
+
+/* ==============================
+   NOSOTROS - POSTRES GUHU
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    font-family: "Nunito", Arial, sans-serif;
+    color: #29252b;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.pagina-nosotros {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* ==============================
+   ENCABEZADO
+============================== */
+
+.encabezado-nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    width: 100%;
+    min-height: 300px;
+    padding: 50px 8%;
+
+    background: linear-gradient(
+        135deg,
+        #ffe4f1 0%,
+        #fff7dc 52%,
+        #d8fff8 100%
+    );
+
+    text-align: center;
+}
+
+.adorno {
+    color: #00a897;
+    font-size: 25px;
+    letter-spacing: 8px;
+}
+
+.subtitulo,
+.etiqueta {
+    color: #008f80;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.encabezado-nosotros h1 {
+    color: #ff1593;
+    font-family: "Lilita One", cursive;
+    font-size: clamp(42px, 6vw, 62px);
+    font-weight: normal;
+    line-height: 1.15;
+}
+
+.introduccion {
+    max-width: 650px;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* ==============================
+   SECCIONES GENERALES
+============================== */
+
+.seccion {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    align-items: center;
+    gap: 45px;
+
+    width: 100%;
+    padding: 65px 10%;
+}
+
+.seccion h2,
+.valores h2 {
+    margin: 12px 0 20px;
+    color: #ff1593;
+    font-family: "Lilita One", cursive;
+    font-size: clamp(30px, 4vw, 40px);
+    font-weight: normal;
+}
+
+.seccion p {
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* ==============================
+   NUESTRA HISTORIA
+   TEXTO ARRIBA E IMAGEN ABAJO
+============================== */
+
+.historia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+
+    background-color: #fff7dc;
+}
+
+.historia-texto {
+    width: 100%;
+}
+
+.historia-texto p + p {
+    margin-top: 15px;
+}
+
+/* ==============================
+   IMAGEN DE NUESTRA HISTORIA
+   MÁS ANCHA Y SIN RECORTES
+============================== */
+
+.espacio-imagen {
+    width: 100%;
+    max-width: 1000px;
+    min-width: 0;
+    margin: 0 auto;
+    overflow: hidden;
+
+    border: 2px solid #00a897;
+    border-radius: 22px;
+    background-color: #fffaf0;
+    box-shadow: 0 8px 22px rgba(0, 137, 122, 0.12);
+}
+
+.imagen-historia {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+/* ==============================
+   MISIÓN Y VISIÓN
+============================== */
+
+.seccion-color {
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 30px;
+    background-color: #d8fff8;
+}
+
+.seccion-clara {
+    grid-template-columns: 90px minmax(0, 1fr);
+    gap: 30px;
+    background-color: #fff7dc;
+}
+
+.numero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 78px;
+    height: 78px;
+
+    border-radius: 50%;
+    background-color: #00cbb5;
+    color: #ffffff;
+
+    font-family: "Lilita One", cursive;
+    font-size: 29px;
+}
+
+.numero-rosa {
+    background-color: #ff1593;
+}
+
+.texto-seccion h2 {
+    margin-top: 0;
+}
+
+/* ==============================
+   NUESTROS VALORES
+============================== */
+
+.valores {
+    width: 100%;
+    padding: 70px 8%;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.valores h2 {
+    margin-bottom: 12px;
+}
+
+.descripcion-valores {
+    max-width: 650px;
+    margin: 0 auto 35px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* REJILLA DE VALORES */
+
+.rejilla-valores {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* TARJETAS */
+
+.tarjeta-valor {
+    padding: 28px 22px;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.valor-rosa {
+    background-color: #ffe4f1;
+}
+
+.valor-turquesa {
+    background-color: #d8fff8;
+}
+
+.valor-verde {
+    grid-column: 1 / -1;
+    background-color: #e5f5dc;
+}
+
+.tarjeta-valor span {
+    display: block;
+    margin-bottom: 12px;
+    color: #008f80;
+    font-size: 30px;
+}
+
+.valor-rosa span {
+    color: #ff1593;
+}
+
+.tarjeta-valor h3 {
+    margin-bottom: 10px;
+    color: #29252b;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.tarjeta-valor p {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ==============================
+   DISEÑO PARA CELULARES
+============================== */
+
+@media (max-width: 650px) {
+
+    .encabezado-nosotros {
+        min-height: 260px;
+        padding: 40px 7%;
+        gap: 12px;
+    }
+
+    .introduccion {
+        font-size: 16px;
+    }
+
+    .seccion {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+        padding: 42px 7%;
+    }
+
+    .seccion-color,
+    .seccion-clara {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .numero {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    .espacio-imagen {
+        max-width: 100%;
+    }
+
+    .imagen-historia {
+        width: 100%;
+        height: auto;
+    }
+
+    .valores {
+        padding: 45px 7%;
+    }
+
+    .rejilla-valores {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .valor-verde {
+        grid-column: auto;
+    }
+
+    .tarjeta-valor {
+        padding: 25px 18px;
+    }
+}

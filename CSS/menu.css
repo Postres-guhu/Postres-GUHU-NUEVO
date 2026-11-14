@@ -1,0 +1,590 @@
+
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+:root {
+    --rosa: #ff1593;
+    --turquesa: #00cbb5;
+    --amarillo: #f6df74;
+    --crema: #fff7dc;
+    --blanco: #ffffff;
+    --negro: #29252b;
+    --gris: #716a72;
+    --rosa-claro: #ffe4f1;
+    --sombra: 0 8px 24px rgba(41, 37, 43, 0.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    background-color: var(--crema);
+}
+
+body {
+    font-family: "Nunito", Arial, sans-serif;
+    background-color: var(--crema);
+    color: var(--negro);
+    min-height: 100vh;
+}
+
+button,
+a {
+    font: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =========================
+   ENCABEZADO PROPIO DEL MENÚ
+   No modifica el encabezado compartido .header
+========================= */
+
+.encabezado {
+    width: 100%;
+    min-height: 85px;
+    padding: 12px 7%;
+    background: var(--blanco);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.encabezado .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--rosa);
+    font-family: "Lilita One", cursive;
+    font-size: 30px;
+}
+
+.encabezado .logo img {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+}
+
+.encabezado .logo-texto {
+    letter-spacing: 1px;
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navegacion a {
+    color: var(--negro);
+    font-weight: 800;
+    transition: color 0.2s ease;
+}
+
+.navegacion a:hover,
+.navegacion a.activo {
+    color: var(--rosa);
+}
+
+/* =========================
+   PORTADA
+========================= */
+
+.portada-menu {
+    min-height: 320px;
+    padding: 65px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        135deg,
+        #ffe4f1 0%,
+        #fff7dc 52%,
+        #d8fff8 100%
+    );
+}
+
+.etiqueta {
+    display: inline-block;
+    padding: 8px 18px;
+    border-radius: 30px;
+    background-color: var(--blanco);
+    color: var(--rosa);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.portada-menu h1 {
+    color: var(--rosa);
+    font-family: "Lilita One", cursive;
+    font-size: clamp(42px, 6vw, 65px);
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+
+.portada-menu p {
+    color: var(--negro);
+    font-size: 17px;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   BOTONES PRINCIPALES
+========================= */
+
+.boton-principal {
+    display: inline-block;
+    border: none;
+    border-radius: 30px;
+    padding: 13px 25px;
+    background-color: var(--rosa);
+    color: var(--blanco);
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.boton-principal:hover {
+    background-color: #e5007e;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   CATÁLOGO
+========================= */
+
+.catalogo {
+    padding: 65px 7%;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.subtitulo {
+    color: var(--turquesa);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.titulo-seccion h2 {
+    font-family: "Lilita One", cursive;
+    color: var(--rosa);
+    font-size: clamp(30px, 4vw, 42px);
+    margin-bottom: 12px;
+}
+
+.titulo-seccion > p:last-child {
+    color: var(--gris);
+    font-size: 16px;
+}
+
+/* =========================
+   CATEGORÍAS CIRCULARES
+========================= */
+
+.categorias-portada {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 45px;
+    margin: 40px auto 65px;
+}
+
+.categoria-circulo {
+    width: 230px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+    color: var(--negro);
+    transition: transform 0.25s ease;
+}
+
+.categoria-circulo:hover {
+    transform: translateY(-6px);
+}
+
+/* IMÁGENES CIRCULARES */
+
+.circulo-imagen {
+    width: 200px;
+    height: 200px;
+    border: 7px solid var(--turquesa);
+    border-radius: 50%;
+    overflow: hidden;
+    display: block;
+    background-color: var(--rosa-claro);
+    box-shadow: var(--sombra);
+    position: relative;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.circulo-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.categoria-circulo:nth-child(2) .circulo-imagen {
+    border-color: var(--rosa);
+}
+
+.categoria-circulo:nth-child(3) .circulo-imagen {
+    border-color: var(--turquesa);
+}
+
+.categoria-circulo.seleccionada .circulo-imagen {
+    box-shadow: 0 0 0 5px var(--amarillo), var(--sombra);
+}
+
+/* NOMBRES Y BOTONES DE CATEGORÍAS */
+
+.categoria-nombre {
+    margin-top: 18px;
+    font-family: "Lilita One", cursive;
+    color: var(--negro);
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+.categoria-boton {
+    margin-top: 10px;
+    display: inline-block;
+    padding: 9px 20px;
+    border-radius: 25px;
+    background-color: var(--turquesa);
+    color: var(--blanco);
+    font-size: 13px;
+    font-weight: 800;
+    transition: background-color 0.2s ease;
+}
+
+.categoria-circulo:nth-child(2) .categoria-boton {
+    background-color: var(--rosa);
+}
+
+.categoria-circulo:nth-child(3) .categoria-boton {
+    background-color: var(--turquesa);
+}
+
+.categoria-circulo:hover .categoria-boton {
+    background-color: var(--negro);
+}
+
+/* =========================
+   TÍTULO DE PRODUCTOS
+========================= */
+
+.titulo-productos {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.titulo-productos h2 {
+    margin-bottom: 0;
+}
+
+/* =========================
+   PRODUCTOS DE GOOGLE SHEETS
+========================= */
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.tarjeta-producto {
+    overflow: hidden;
+    border-radius: 18px;
+    background-color: var(--blanco);
+    box-shadow: var(--sombra);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(41, 37, 43, 0.15);
+}
+
+.imagen-producto {
+    width: 100%;
+    height: 220px;
+    display: block;
+    object-fit: cover;
+    background-color: var(--rosa-claro);
+}
+
+.info-producto {
+    padding: 20px;
+}
+
+.nombre-producto {
+    color: var(--negro);
+    font-size: 19px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.precio-producto {
+    color: var(--rosa);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+/* =========================
+   BOTÓN AGREGAR AL CARRITO
+========================= */
+
+.boton-carrito {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding: 11px 15px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--turquesa);
+    color: var(--blanco);
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.boton-carrito:hover {
+    background-color: var(--rosa);
+    transform: translateY(-2px);
+}
+
+.boton-carrito:active {
+    transform: scale(0.98);
+}
+
+/* =========================
+   ESTADOS DE CARGA Y MENSAJES
+========================= */
+
+.estado-carga,
+.mensaje-vacio,
+.error-carga {
+    text-align: center;
+    padding: 35px 20px;
+    margin: 20px 0;
+    border-radius: 16px;
+    background-color: var(--blanco);
+}
+
+.estado-carga {
+    color: var(--turquesa);
+    font-weight: 800;
+}
+
+.mensaje-vacio h3,
+.error-carga h3 {
+    font-family: "Lilita One", cursive;
+    color: var(--rosa);
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.mensaje-vacio p,
+.error-carga p {
+    color: var(--gris);
+    margin-bottom: 18px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* =========================
+   PIE DE PÁGINA
+========================= */
+
+.pie-pagina {
+    padding: 30px 20px;
+    text-align: center;
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
+.pie-pagina p:first-child {
+    font-family: "Lilita One", cursive;
+    color: var(--rosa);
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+.pie-pagina p:last-child {
+    font-size: 14px;
+    color: #f4eaf0;
+}
+
+/* =========================
+   ACCESO AL CARRITO
+========================= */
+
+.acceso-carrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin: 45px auto 10px;
+    padding: 30px 20px;
+    border-radius: 20px;
+    background: linear-gradient(
+        135deg,
+        var(--rosa-claro),
+        var(--crema),
+        #d8fff8
+    );
+    text-align: center;
+}
+
+.acceso-carrito p {
+    margin: 0;
+    color: var(--negro);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.boton-ir-carrito {
+    display: inline-block;
+    padding: 13px 27px;
+    border: 2px solid var(--rosa);
+    border-radius: 30px;
+    background-color: var(--rosa);
+    color: var(--blanco);
+    font-weight: 800;
+    text-decoration: none;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.boton-ir-carrito:hover {
+    background-color: var(--turquesa);
+    border-color: var(--turquesa);
+    transform: translateY(-3px);
+}
+
+.boton-ir-carrito:focus-visible {
+    outline: 3px solid var(--turquesa);
+    outline-offset: 4px;
+}
+
+/* =========================
+   DISEÑO RESPONSIVO
+========================= */
+
+@media (max-width: 700px) {
+    .encabezado {
+        padding: 12px 5%;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .navegacion {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .portada-menu {
+        min-height: 290px;
+        padding: 50px 20px;
+    }
+
+    .catalogo {
+        padding: 45px 5%;
+    }
+
+    .categorias-portada {
+        gap: 35px 20px;
+    }
+
+    .categoria-circulo {
+        width: 190px;
+    }
+
+    .circulo-imagen {
+        width: 165px;
+        height: 165px;
+    }
+
+    .categoria-nombre {
+        font-size: 22px;
+    }
+
+    .productos {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 15px;
+    }
+
+    .imagen-producto {
+        height: 170px;
+    }
+
+    .info-producto {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 420px) {
+    .categorias-portada {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .categoria-circulo {
+        width: 100%;
+    }
+
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    .acceso-carrito {
+        padding: 25px 15px;
+    }
+
+    .acceso-carrito p {
+        font-size: 15px;
+    }
+
+    .boton-ir-carrito {
+        padding: 12px 22px;
+        font-size: 14px;
+    }
+}

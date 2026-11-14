@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi carrito | Postres GUHU</title>
+    <meta name="description" content="Revisa tus postres favoritos y prepara tu pedido en Postres GUHU.">
+
+    <!-- Tipografías de Postres GUHU -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;500;600;700;800;900&family=Asul:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS compartido y del carrito -->
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/carrito.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+
+    <!-- JavaScript del carrito -->
+    <script src="JS/carrito.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Encabezado compartido -->
+    <div id="contenedor-header"></div>
+
+    <main class="contenedor-carrito">
+
+        <section class="portada-carrito">
+            <span class="etiqueta-carrito">UN TOQUE DULCE PARA TU DÍA</span>
+
+            <h1>Mi carrito <span aria-hidden="true">♡</span></h1>
+
+            <p>Tus postres favoritos, listos para compartir.</p>
+
+            <a class="enlace-regresar" href="menu.html">
+                ← Seguir comprando
+            </a>
+        </section>
+
+        <div class="contenido-carrito">
+
+            <section class="zona-productos" aria-labelledby="titulo-productos">
+
+                <div class="titulo-zona">
+                    <div>
+                        <h2 id="titulo-productos">Tus postres</h2>
+                        <p>Revisa lo que elegiste para tu pedido.</p>
+                    </div>
+
+                    <!-- Logo de Postres GUHU -->
+                    <div class="icono-dulce">
+                        <img
+                            src="assets/logo%20postres%20guhu.png"
+                            alt="Logo de Postres GUHU">
+                    </div>
+                </div>
+
+                <div
+                    id="lista-carrito"
+                    class="lista-carrito"
+                    aria-live="polite">
+                </div>
+
+                <div id="carrito-vacio" class="carrito-vacio" hidden>
+                    <span class="dibujo-vacio" aria-hidden="true">🛒</span>
+
+                    <h3>¡Tu carrito está esperando algo dulce!</h3>
+
+                    <p>Aún no agregas postres a tu pedido.</p>
+
+                    <a href="menu.html" class="boton-principal enlace-menu">
+                        Ver nuestros postres
+                    </a>
+                </div>
+
+            </section>
+
+            <aside
+                id="resumen-carrito"
+                class="resumen-carrito"
+                aria-labelledby="titulo-resumen"
+                hidden>
+
+                <div class="resumen-encabezado">
+                    <span class="icono-resumen" aria-hidden="true">♡</span>
+
+                    <div>
+                        <h2 id="titulo-resumen">Resumen de tu pedido</h2>
+                        <p>Un detalle dulce empieza aquí.</p>
+                    </div>
+                </div>
+
+                <div class="fila-total">
+                    <span>Subtotal</span>
+                    <span id="subtotal">$0.00</span>
+                </div>
+
+                <div class="fila-total">
+                    <span>Envío</span>
+                    <span class="envio-pendiente">Por confirmar</span>
+                </div>
+
+                <div class="nota-envio">
+                    El costo de entrega se confirmará al realizar tu pedido.
+                </div>
+
+                <div class="fila-total total-final">
+                    <span>Total de productos</span>
+                    <span id="total">$0.00</span>
+                </div>
+
+                <button
+                    id="continuar-pedido"
+                    class="boton-principal boton-continuar"
+                    type="button">
+                    Continuar con mi pedido
+                    <span aria-hidden="true">→</span>
+                </button>
+
+                <button
+                    id="vaciar-carrito"
+                    class="boton-secundario"
+                    type="button">
+                    Vaciar carrito
+                </button>
+
+                <div class="mensaje-confianza">
+                    <span aria-hidden="true">♡</span>
+                    <p>Preparado con amor y dedicación por Postres GUHU.</p>
+                </div>
+
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- Footer compartido -->
+    <div id="contenedor-footer"></div>
+
+    <!-- JavaScript compartido -->
+    <script src="JS/components.js"></script>
+
+</body>
+</html>

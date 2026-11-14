@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menú | Postres GUHU</title>
+
+    <!-- Tipografías de Postres GUHU -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Lilita+One&family=Asul:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS del encabezado, menú y footer -->
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/menu.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+
+    <!-- JavaScript del catálogo -->
+    <script src="JS/menu.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Encabezado compartido -->
+    <div id="contenedor-header"></div>
+
+    <main>
+
+        <!-- CATÁLOGO DE POSTRES -->
+        <section class="catalogo" id="catalogo">
+
+            <div class="titulo-seccion">
+                <p class="subtitulo">DESCUBRE TU FAVORITO</p>
+                <h2>Postres GUHU</h2>
+                <p>Elige una categoría y descubre nuestros postres.</p>
+            </div>
+
+            <!-- CATEGORÍAS -->
+            <div class="categorias-portada" aria-label="Categorías de postres">
+
+                <!-- PAY -->
+                <button
+                    class="categoria-circulo"
+                    type="button"
+                    data-categoria="Pay">
+
+                    <span class="circulo-imagen">
+                        <img src="assets/pay.jpg" alt="Nuestros pays">
+                    </span>
+
+                    <span class="categoria-nombre">PAY</span>
+                    <span class="categoria-boton">Ver productos</span>
+                </button>
+
+                <!-- GELATINAS -->
+                <button
+                    class="categoria-circulo"
+                    type="button"
+                    data-categoria="Gelatinas">
+
+                    <span class="circulo-imagen">
+                        <img src="assets/gelatina.jpg" alt="Nuestras gelatinas">
+                    </span>
+
+                    <span class="categoria-nombre">GELATINAS</span>
+                    <span class="categoria-boton">Ver productos</span>
+                </button>
+
+                <!-- ESPECIALES -->
+                <button
+                    class="categoria-circulo"
+                    type="button"
+                    data-categoria="Especiales">
+
+                    <span class="circulo-imagen">
+                        <img src="assets/especiales.jpg" alt="Postres especiales">
+                    </span>
+
+                    <span class="categoria-nombre">ESPECIALES</span>
+                    <span class="categoria-boton">Ver productos</span>
+                </button>
+
+            </div>
+
+            <!-- TÍTULO DE LOS PRODUCTOS -->
+            <div class="titulo-seccion titulo-productos">
+                <h2 id="titulo-categoria">Nuestros postres</h2>
+            </div>
+
+            <!-- MENSAJE DE CARGA -->
+            <div
+                class="estado-carga"
+                id="estado-carga"
+                role="status"
+                aria-live="polite"
+                hidden>
+                Cargando nuestros postres...
+            </div>
+
+            <!-- PRODUCTOS DE GOOGLE SHEETS -->
+            <div class="productos" id="lista-productos"></div>
+
+            <!-- MENSAJE CUANDO NO HAY PRODUCTOS -->
+            <div class="mensaje-vacio" id="mensaje-vacio" hidden>
+                <h3>¡Pronto habrá más opciones!</h3>
+                <p>Por el momento no hay productos en esta categoría.</p>
+            </div>
+
+            <!-- MENSAJE DE ERROR -->
+            <div class="error-carga" id="error-carga" hidden>
+                <h3>No pudimos cargar los productos</h3>
+
+                <p id="detalle-error">
+                    Revisa la conexión con Google Sheets e inténtalo nuevamente.
+                </p>
+
+                <button
+                    class="boton-principal"
+                    id="reintentar"
+                    type="button">
+                    Volver a intentar
+                </button>
+            </div>
+
+            <!-- ACCESO AL CARRITO -->
+            <div class="acceso-carrito">
+                <p>¿Ya elegiste tus postres favoritos?</p>
+
+                <a href="carrito.html" class="boton-ir-carrito">
+                    🛒 Ir a mi carrito
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer compartido -->
+    <div id="contenedor-footer"></div>
+
+    <!-- Cargar encabezado y footer -->
+    <script src="JS/components.js"></script>
+
+</body>
+</html>

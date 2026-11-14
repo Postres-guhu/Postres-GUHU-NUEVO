@@ -1,0 +1,247 @@
+/* =========================
+   DISEÑO GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff7dc;
+    color: #333333;
+}
+
+.contacto {
+    width: 100%;
+}
+
+
+/* =========================
+   PORTADA DE CONTACTO
+========================= */
+
+.portada-contacto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 65px 8%;
+    background-color: #ffe4f1;
+}
+
+.contenido-portada {
+    flex: 1;
+    max-width: 550px;
+}
+
+.etiqueta {
+    display: inline-block;
+    color: #008f83;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+.contenido-portada h1 {
+    font-family: "Lilita One", cursive;
+    color: #ff1593;
+    font-size: 43px;
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.contenido-portada p {
+    font-family: Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.boton-whatsapp {
+    display: inline-block;
+    padding: 16px 24px;
+    background-color: #00cbb5;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.boton-whatsapp:hover {
+    background-color: #009f90;
+    transform: translateY(-3px);
+}
+
+.contenido-portada small {
+    display: block;
+    margin-top: 17px;
+    color: #66535d;
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   IMAGEN
+========================= */
+
+.imagen-contacto {
+    flex: 1;
+    max-width: 450px;
+}
+
+.imagen-contacto img {
+    display: block;
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    border-radius: 25px;
+    border: 7px solid white;
+}
+
+
+/* =========================
+   TARJETAS DE CONTACTO
+========================= */
+
+.opciones-contacto {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+.opciones-contacto h2 {
+    font-family: "Lilita One", cursive;
+    color: #ff1593;
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.subtitulo {
+    font-family: Arial, sans-serif;
+    color: #66535d;
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.tarjeta {
+    background-color: white;
+    padding: 30px 22px;
+    border-radius: 20px;
+    border-bottom: 5px solid #00cbb5;
+    transition: 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+    background-color: #ffe4f1;
+    border-radius: 50%;
+    font-size: 30px;
+}
+
+.tarjeta h3 {
+    font-family: "Lilita One", cursive;
+    color: #ff1593;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.tarjeta p {
+    font-family: Arial, sans-serif;
+    color: #66535d;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   MENSAJE FINAL
+========================= */
+
+.mensaje-final {
+    margin-top: 50px;
+    padding: 35px 20px;
+    background-color: #ffe4f1;
+    border-radius: 22px;
+}
+
+.mensaje-final h2 {
+    margin-bottom: 12px;
+}
+
+.mensaje-final p {
+    font-family: Arial, sans-serif;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+.boton-secundario {
+    display: inline-block;
+    padding: 13px 28px;
+    background-color: #ff1593;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.boton-secundario:hover {
+    background-color: #d90b78;
+}
+
+
+/* =========================
+   ADAPTACIÓN A CELULAR
+========================= */
+
+@media (max-width: 800px) {
+
+    .portada-contacto {
+        flex-direction: column;
+        padding: 45px 7%;
+        text-align: center;
+    }
+
+    .contenido-portada h1 {
+        font-size: 34px;
+    }
+
+    .imagen-contacto {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .imagen-contacto img {
+        height: 260px;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .opciones-contacto {
+        padding: 45px 7%;
+    }
+}

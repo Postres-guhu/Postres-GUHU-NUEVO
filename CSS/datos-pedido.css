@@ -1,0 +1,272 @@
+
+/* ==============================
+   DATOS DEL PEDIDO - POSTRES GUHU
+============================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Nunito", Arial, sans-serif;
+    background-color: #fffaf7;
+    color: #29252b;
+}
+
+/* ==============================
+   CONTENEDOR PRINCIPAL
+============================== */
+
+.contenedor-datos {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 45px 25px 70px;
+}
+
+/* ==============================
+   PORTADA
+============================== */
+
+.portada-datos {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.etiqueta-datos {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 30px;
+    background-color: #ffe0ed;
+    color: #e91e83;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.portada-datos h1 {
+    margin: 18px 0 10px;
+    color: #ff1593;
+    font-family: "Lilita One", cursive;
+    font-size: clamp(35px, 5vw, 48px);
+    font-weight: normal;
+}
+
+.portada-datos h1 span {
+    color: #00bda9;
+}
+
+.portada-datos p {
+    margin: 0 0 20px;
+    color: #625b63;
+    font-size: 17px;
+}
+
+.enlace-regresar {
+    display: inline-block;
+    color: #009f91;
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.enlace-regresar:hover {
+    color: #ff1593;
+}
+
+/* ==============================
+   CONTENEDOR DEL FORMULARIO
+============================== */
+
+.contenido-datos {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #ffffff;
+    border: 2px solid #f8dce9;
+    border-radius: 22px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* ==============================
+   ENCABEZADO DEL FORMULARIO
+============================== */
+
+.encabezado-formulario {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.icono-formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 55px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: #ffe0ed;
+    color: #ff1593;
+    font-size: 30px;
+}
+
+.encabezado-formulario h2 {
+    margin: 0 0 5px;
+    color: #29252b;
+    font-family: "Asul", serif;
+    font-size: 25px;
+}
+
+.encabezado-formulario p {
+    margin: 0;
+    color: #777078;
+    font-size: 15px;
+}
+
+/* ==============================
+   CAMPOS DEL FORMULARIO
+============================== */
+
+.grupo-campos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 22px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.campo label {
+    color: #29252b;
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.campo input {
+    width: 100%;
+    min-height: 50px;
+    padding: 13px 15px;
+    border: 2px solid #eadfe5;
+    border-radius: 11px;
+    outline: none;
+    background-color: #fffdfd;
+    color: #29252b;
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 15px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.campo input::placeholder {
+    color: #aaa1a8;
+}
+
+.campo input:focus {
+    border-color: #00cbb5;
+    box-shadow: 0 0 0 3px rgba(0, 203, 181, 0.12);
+}
+
+.campo small {
+    color: #888088;
+    font-size: 12px;
+}
+
+/* ==============================
+   AVISO
+============================== */
+
+.aviso-pedido {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 30px;
+    padding: 17px;
+    border-radius: 12px;
+    background-color: #e8faf7;
+}
+
+.aviso-pedido span {
+    color: #00a897;
+    font-size: 22px;
+}
+
+.aviso-pedido p {
+    margin: 0;
+    color: #49645f;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ==============================
+   BOTÓN PRINCIPAL
+============================== */
+
+.boton-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 55px;
+    margin-top: 28px;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: #ff1593;
+    color: #ffffff;
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.boton-principal:hover {
+    background-color: #e6007e;
+    transform: translateY(-2px);
+}
+
+.boton-principal:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ==============================
+   DISEÑO RESPONSIVO
+============================== */
+
+@media (max-width: 650px) {
+
+    .contenedor-datos {
+        padding: 35px 15px 50px;
+    }
+
+    .portada-datos p {
+        font-size: 15px;
+    }
+
+    .contenido-datos {
+        padding: 25px 20px;
+        border-radius: 17px;
+    }
+
+    .encabezado-formulario h2 {
+        font-size: 21px;
+    }
+
+    .grupo-campos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .boton-principal {
+        font-size: 14px;
+    }
+}

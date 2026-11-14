@@ -1,0 +1,268 @@
+
+/* ==============================
+   FOOTER - POSTRES GUHU
+============================== */
+
+.footer-guhu,
+.footer-guhu * {
+    box-sizing: border-box;
+}
+
+.footer-guhu {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Nunito", Arial, sans-serif;
+    color: #29252b;
+}
+
+/* ==============================
+   PARTE SUPERIOR DECORATIVA
+============================== */
+
+.footer-banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: 100%;
+    min-height: 220px;
+    padding: 30px 20px;
+
+    background-image: url("../assets/fondoheader.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    text-align: center;
+}
+
+.footer-guhu .adorno-superior {
+    color: #00a897;
+    font-size: 20px;
+    letter-spacing: 8px;
+}
+
+.footer-guhu .footer-banner h2 {
+    margin: 0;
+    color: #ff1593;
+    font-family: "Lilita One", cursive;
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: normal;
+    letter-spacing: 1px;
+    line-height: 1.15;
+}
+
+.footer-guhu .footer-descripcion {
+    margin: 0;
+    color: #29252b;
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.footer-guhu .linea-decorativa {
+    color: #00a897;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+/* ==============================
+   CONTENIDO PRINCIPAL
+============================== */
+
+.footer-guhu .footer-contenido {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 40px;
+
+    width: 100%;
+    margin: 0;
+    padding: 45px 10%;
+
+    background-color: #fff7dc;
+}
+
+.footer-guhu .footer-info {
+    min-width: 0;
+    text-align: left;
+}
+
+/* ==============================
+   REDES SOCIALES
+============================== */
+
+.footer-guhu .footer-redes p {
+    margin: 14px 0;
+    color: #29252b;
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.footer-guhu .footer-redes strong,
+.footer-guhu .footer-telefono strong {
+    color: #00a897;
+    font-weight: 800;
+}
+
+/* ENLACES DE REDES */
+
+.footer-guhu .footer-redes a {
+    color: #ff1593;
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-guhu .footer-redes a:hover {
+    color: #00a897;
+}
+
+/* ==============================
+   WHATSAPP Y TELÉFONO
+============================== */
+
+.footer-guhu .footer-telefono {
+    margin-top: 22px;
+    color: #29252b;
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.footer-guhu .footer-telefono a {
+    color: #ff1593;
+    font-family: "Nunito", Arial, sans-serif;
+    font-weight: 800;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-guhu .footer-telefono a:hover {
+    color: #00a897;
+}
+
+/* ==============================
+   LOGO
+============================== */
+
+.footer-guhu .footer-imagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    max-width: 280px;
+    height: 280px;
+    margin: 0 auto;
+
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.footer-guhu .footer-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    object-fit: contain;
+
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+/* ==============================
+   FRANJA INFERIOR TURQUESA
+============================== */
+
+.footer-guhu .footer-copy {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 18px 15px;
+
+    background-color: #00cbb5;
+    color: #ffffff;
+    text-align: center;
+}
+
+.footer-guhu .footer-copy p {
+    margin: 0;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ==============================
+   DISEÑO RESPONSIVO
+============================== */
+
+@media (max-width: 650px) {
+
+    .footer-guhu .footer-banner {
+        min-height: 190px;
+        padding: 25px 15px;
+        gap: 9px;
+    }
+
+    .footer-guhu .footer-banner h2 {
+        font-size: clamp(32px, 9vw, 42px);
+    }
+
+    .footer-guhu .footer-descripcion {
+        max-width: 340px;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .footer-guhu .footer-contenido {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+        padding: 35px 8%;
+    }
+
+    .footer-guhu .footer-info {
+        text-align: center;
+    }
+
+    .footer-guhu .footer-redes p {
+        font-size: 15px;
+    }
+
+    .footer-guhu .footer-redes a {
+        font-size: 15px;
+    }
+
+    .footer-guhu .footer-telefono {
+        font-size: 15px;
+    }
+
+    .footer-guhu .footer-imagen {
+        max-width: 230px;
+        height: 230px;
+    }
+
+    .footer-guhu .footer-copy {
+        padding: 16px 12px;
+    }
+
+    .footer-guhu .footer-copy p {
+        font-size: 13px;
+    }
+}

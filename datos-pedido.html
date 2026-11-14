@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Datos del pedido | Postres GUHU</title>
+    <meta name="description" content="Completa tus datos para realizar tu pedido en Postres GUHU.">
+
+    <!-- Tipografías de Postres GUHU -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;500;600;700;800;900&family=Asul:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS compartido y de datos del pedido -->
+    <link rel="stylesheet" href="CSS/header.css">
+    <link rel="stylesheet" href="CSS/datos-pedido.css">
+    <link rel="stylesheet" href="CSS/footer.css">
+
+    <!-- JavaScript -->
+    <script src="JS/components.js" defer></script>
+    <script src="JS/datos-pedido.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Encabezado compartido -->
+    <div id="contenedor-header"></div>
+
+    <main class="contenedor-datos">
+
+        <!-- Portada -->
+        <section class="portada-datos">
+            <span class="etiqueta-datos">YA CASI ESTÁ LISTO</span>
+
+            <h1>Datos de tu pedido <span aria-hidden="true">♡</span></h1>
+
+            <p>Unos pequeños datos para preparar tu pedido con mucho cariño.</p>
+
+            <a href="carrito.html" class="enlace-regresar">
+                ← Regresar a mi carrito
+            </a>
+        </section>
+
+        <!-- Contenido del formulario -->
+        <section class="contenido-datos">
+
+            <div class="encabezado-formulario">
+                <span class="icono-formulario" aria-hidden="true">♡</span>
+
+                <div>
+                    <h2>Información del comprador</h2>
+                    <p>Completa los siguientes campos.</p>
+                </div>
+            </div>
+
+            <form id="formulario-pedido">
+
+                <div class="grupo-campos">
+
+                    <!-- Nombre -->
+                    <div class="campo">
+                        <label for="nombre">Nombre completo</label>
+                        <input
+                            type="text"
+                            id="nombre"
+                            name="nombre"
+                            placeholder="Escribe tu nombre completo"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <!-- Edad -->
+                    <div class="campo">
+                        <label for="edad">Edad</label>
+                        <input
+                            type="number"
+                            id="edad"
+                            name="edad"
+                            placeholder="Escribe tu edad"
+                            min="1"
+                            max="120"
+                            required
+                        >
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div class="campo">
+                        <label for="telefono">Número de teléfono</label>
+                        <input
+                            type="tel"
+                            id="telefono"
+                            name="telefono"
+                            placeholder="Ej. 2221234567"
+                            autocomplete="tel"
+                            maxlength="10"
+                            pattern="[0-9]{10}"
+                            required
+                        >
+                        <small>Escribe los 10 dígitos de tu número.</small>
+                    </div>
+
+                    <!-- Correo -->
+                    <div class="campo">
+                        <label for="correo">Correo electrónico</label>
+                        <input
+                            type="email"
+                            id="correo"
+                            name="correo"
+                            placeholder="Ej. correo@gmail.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <!-- Aviso -->
+                <div class="aviso-pedido">
+                    <span aria-hidden="true">♡</span>
+                    <p>
+                        Al continuar, registraremos los datos de tu pedido
+                        y podrás enviarnos la información por WhatsApp
+                        para confirmar los detalles.
+                    </p>
+                </div>
+
+                <!-- Botón -->
+                <button
+                    type="submit"
+                    id="confirmar-pedido"
+                    class="boton-principal"
+                >
+                    Confirmar mis datos y continuar
+                    <span aria-hidden="true">→</span>
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- Footer compartido -->
+    <div id="contenedor-footer"></div>
+
+</body>
+</html>

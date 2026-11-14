@@ -1,0 +1,206 @@
+
+/* =========================
+   COLORES Y CONFIGURACIÓN
+========================= */
+
+:root {
+    --rosa: #ff1593;
+    --turquesa: #00cbb5;
+    --amarillo: #f6df74;
+    --crema: #fff7dc;
+    --blanco: #ffffff;
+    --negro: #29252b;
+    --gris: #716a72;
+    --rosa-claro: #ffe4f1;
+    --sombra: 0 8px 24px rgba(41, 37, 43, 0.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--crema);
+}
+
+body {
+    font-family: "Nunito", Arial, sans-serif;
+    background-color: var(--crema);
+    color: var(--negro);
+    min-height: 100vh;
+}
+
+/* =========================
+   HOME
+   El encabezado se controla
+   desde CSS/header.css
+========================= */
+
+.home {
+    position: relative;
+    min-height: calc(100vh - 125px);
+    width: 100%;
+    overflow: hidden;
+    padding: 45px 20px 55px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--crema);
+}
+
+/* =========================
+   TÍTULO PRINCIPAL
+========================= */
+
+.titulo-home {
+    position: relative;
+    z-index: 2;
+    color: var(--rosa);
+    font-family: "Lilita One", cursive;
+    font-size: clamp(55px, 9vw, 100px);
+    font-weight: 400;
+    line-height: 1.1;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+/* =========================
+   IMAGEN DE GELATINAS
+========================= */
+
+.imagen-gelatina {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 5px auto 20px;
+}
+
+.imagen-gelatina img {
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* =========================
+   CÍRCULO ROSA PASTEL
+========================= */
+
+.adorno-home {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background-color: var(--rosa-claro);
+    top: 180px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+/* =========================
+   BOTÓN DE PEDIDO
+========================= */
+
+.contenedor-boton {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.boton-pedido {
+    display: inline-block;
+    padding: 14px 30px;
+    border: 2px solid var(--rosa);
+    border-radius: 30px;
+    background-color: var(--rosa);
+    color: var(--blanco);
+    font-family: "Nunito", Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: var(--sombra);
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.boton-pedido:hover {
+    background-color: var(--turquesa);
+    border-color: var(--turquesa);
+    transform: translateY(-3px);
+}
+
+/* =========================
+   ACCESIBILIDAD
+========================= */
+
+.boton-pedido:focus-visible {
+    outline: 3px solid var(--turquesa);
+    outline-offset: 4px;
+}
+
+/* =========================
+   DISEÑO RESPONSIVO
+========================= */
+
+@media (max-width: 600px) {
+    .home {
+        min-height: calc(100vh - 110px);
+        padding: 40px 18px 45px;
+    }
+
+    .titulo-home {
+        font-size: 58px;
+        letter-spacing: 1px;
+    }
+
+    .imagen-gelatina {
+        max-width: 100%;
+        margin-top: 5px;
+    }
+
+    .imagen-gelatina img {
+        max-width: 340px;
+    }
+
+    .adorno-home {
+        width: 220px;
+        height: 220px;
+        top: 165px;
+    }
+
+    .boton-pedido {
+        padding: 13px 25px;
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 380px) {
+    .titulo-home {
+        font-size: 49px;
+    }
+
+    .imagen-gelatina img {
+        max-width: 290px;
+    }
+
+    .adorno-home {
+        width: 195px;
+        height: 195px;
+    }
+}
