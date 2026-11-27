@@ -255,13 +255,6 @@ function mostrarCarrito() {
 
         controles.append(cantidadControl, eliminar);
 
-        /* EXISTENCIAS */
-
-        const existenciaElemento = document.createElement("p");
-
-        existenciaElemento.textContent =
-            `Disponibles: ${Number.isInteger(existencia) ? existencia : "No verificadas"}`;
-
         /* IMPORTE */
 
         const importeElemento = document.createElement("p");
@@ -277,7 +270,6 @@ function mostrarCarrito() {
         informacion.append(
             nombre,
             precioElemento,
-            existenciaElemento,
             controles,
             importeElemento
         );

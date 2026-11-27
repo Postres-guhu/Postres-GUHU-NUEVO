@@ -415,17 +415,6 @@ async function cargarCategoria(categoria) {
             precio.textContent =
                 `$${producto.precio.toFixed(2)}`;
 
-            /* EXISTENCIAS */
-
-            const existencia = document.createElement("p");
-
-            existencia.className = "existencia-producto";
-
-            existencia.textContent =
-                producto.existencia > 0
-                    ? `Disponibles: ${producto.existencia}`
-                    : "Agotado";
-
             /* BOTÓN */
 
             const botonCarrito = document.createElement("button");
@@ -447,7 +436,6 @@ async function cargarCategoria(categoria) {
             informacion.append(
                 nombre,
                 precio,
-                existencia,
                 botonCarrito
             );
 
