@@ -3,7 +3,7 @@
    CARRITO DE COMPRAS - POSTRES GUHU
 ============================== */
 
-const CLAVE_CARRITO = "postresGuhuCarrito";
+const CLAVE_CARRITO = window.PostresGuhuConfig.CLAVE_CARRITO;
 
 const listaCarrito = document.getElementById("lista-carrito");
 const carritoVacio = document.getElementById("carrito-vacio");
@@ -13,7 +13,7 @@ const totalElemento = document.getElementById("total");
 const botonVaciar = document.getElementById("vaciar-carrito");
 const botonContinuar = document.getElementById("continuar-pedido");
 
-const CATEGORIAS_VALIDAS = ["Gelatinas", "Especiales", "Pay"];
+const CATEGORIAS_VALIDAS = window.PostresGuhuConfig.CATEGORIAS;
 
 /* ==============================
    LEER CARRITO

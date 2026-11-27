@@ -4,15 +4,8 @@
    MENÚ - POSTRES GUHU
 ===================================== */
 
-const URL_CATEGORIAS = {
-    "Pay": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBk8g0SlBZqux32HU51cBqSbKXTLD1V0LS0QkVnmq-ls4l4JBpBMpWzz0ScNx_kjY4jAYzzrnUXZqn/pub?gid=597117416&single=true&output=csv",
-
-    "Gelatinas": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBk8g0SlBZqux32HU51cBqSbKXTLD1V0LS0QkVnmq-ls4l4JBpBMpWzz0ScNx_kjY4jAYzzrnUXZqn/pub?gid=2002367845&single=true&output=csv",
-
-    "Especiales": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTBk8g0SlBZqux32HU51cBqSbKXTLD1V0LS0QkVnmq-ls4l4JBpBMpWzz0ScNx_kjY4jAYzzrnUXZqn/pub?gid=1059968763&single=true&output=csv"
-};
-
-const CLAVE_CARRITO = "postresGuhuCarrito";
+const URL_CATEGORIAS = window.PostresGuhuConfig.CATEGORIAS_CSV;
+const CLAVE_CARRITO = window.PostresGuhuConfig.CLAVE_CARRITO;
 
 const listaProductos = document.getElementById("lista-productos");
 const estadoCarga = document.getElementById("estado-carga");
@@ -27,6 +20,8 @@ const botonesCategorias = document.querySelectorAll(
 );
 
 let categoriaActual = "Pay";
+const cacheCategorias = new Map();
+let controladorCategoria = null;
 
 /* =====================================
    CONVERTIR CSV EN FILAS
@@ -207,6 +202,13 @@ async function cargarCategoria(categoria) {
 
     categoriaActual = categoria;
 
+    if (controladorCategoria) {
+        controladorCategoria.abort();
+    }
+
+    controladorCategoria = new AbortController();
+    const senal = controladorCategoria.signal;
+
     tituloCategoria.textContent = categoria;
 
     botonesCategorias.forEach(boton => {
@@ -231,15 +233,21 @@ async function cargarCategoria(categoria) {
 
     try {
 
-        const respuesta = await fetch(URL_CATEGORIAS[categoria], {
-            cache: "no-store"
-        });
+        let textoCSV = cacheCategorias.get(categoria);
 
-        if (!respuesta.ok) {
-            throw new Error("No se pudo consultar Google Sheets.");
+        if (!textoCSV) {
+            const respuesta = await fetch(URL_CATEGORIAS[categoria], {
+                cache: "reload",
+                signal: senal
+            });
+
+            if (!respuesta.ok) {
+                throw new Error("No se pudo consultar Google Sheets.");
+            }
+
+            textoCSV = await respuesta.text();
+            cacheCategorias.set(categoria, textoCSV);
         }
-
-        const textoCSV = await respuesta.text();
 
         const filas = leerCSV(textoCSV);
 
@@ -451,6 +459,10 @@ async function cargarCategoria(categoria) {
 
     } catch (error) {
 
+        if (error.name === "AbortError") {
+            return;
+        }
+
         console.error("Error al cargar productos:", error);
 
         detalleError.textContent =
@@ -461,7 +473,9 @@ async function cargarCategoria(categoria) {
 
     } finally {
 
-        estadoCarga.hidden = true;
+        if (senal === controladorCategoria.signal) {
+            estadoCarga.hidden = true;
+        }
 
     }
 
@@ -487,6 +501,7 @@ botonesCategorias.forEach(boton => {
 
 botonReintentar.addEventListener("click", () => {
 
+    cacheCategorias.delete(categoriaActual);
     cargarCategoria(categoriaActual);
 
 });

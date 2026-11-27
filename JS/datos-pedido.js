@@ -3,13 +3,10 @@
    DATOS DEL PEDIDO - POSTRES GUHU
 ============================== */
 
-const CLAVE_CARRITO = "postresGuhuCarrito";
-const CLAVE_SOLICITUD_PENDIENTE = "postresGuhuSolicitudPendiente";
-
-const URL_APPS_SCRIPT =
-    "https://script.google.com/macros/s/AKfycbxLR1h-QFq9knHM1aqkErbg6y5LjZfh9RJrVlqDyhApoEZnPk_6zDRTqXk86RxxY5u4/exec";
-
-const WHATSAPP_GUHU = "522228980745";
+const CLAVE_CARRITO = window.PostresGuhuConfig.CLAVE_CARRITO;
+const CLAVE_SOLICITUD_PENDIENTE = window.PostresGuhuConfig.CLAVE_SOLICITUD_PENDIENTE;
+const URL_APPS_SCRIPT = window.PostresGuhuConfig.URL_APPS_SCRIPT;
+const WHATSAPP_GUHU = window.PostresGuhuConfig.WHATSAPP_GUHU;
 
 const formulario = document.getElementById("formulario-pedido");
 const botonConfirmar = document.getElementById("confirmar-pedido");
@@ -224,6 +221,18 @@ function enviarPedido(datos, solicitudId) {
 
         function recibirRespuesta(event) {
 
+            const origenesPermitidos = [
+                "https://script.google.com",
+                "https://script.googleusercontent.com"
+            ];
+
+            if (
+                event.source !== iframe.contentWindow ||
+                !origenesPermitidos.includes(event.origin)
+            ) {
+                return;
+            }
+
             let respuesta = event.data;
 
             if (typeof respuesta === "string") {
@@ -312,6 +321,16 @@ if (formulario && botonConfirmar) {
 
         if (!formulario.checkValidity()) {
             formulario.reportValidity();
+            return;
+        }
+
+        if (
+            datos.nombre.length < 2 ||
+            datos.nombre.length > 100 ||
+            !/^[0-9]{10}$/.test(datos.telefono) ||
+            datos.correo.length > 254
+        ) {
+            alert("Revisa que el nombre, teléfono y correo sean válidos.");
             return;
         }
 

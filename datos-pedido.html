@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://docs.google.com https://script.google.com https://script.googleusercontent.com; frame-src https://script.google.com https://script.googleusercontent.com; form-action 'self' https://script.google.com https://script.googleusercontent.com; base-uri 'self'; object-src 'none'">
 
     <title>Datos del pedido | Postres GUHU</title>
     <meta name="description" content="Completa tus datos para realizar tu pedido en Postres GUHU.">
@@ -19,6 +21,7 @@
     <link rel="stylesheet" href="CSS/footer.css">
 
     <!-- JavaScript -->
+    <script src="JS/config.js" defer></script>
     <script src="JS/components.js" defer></script>
     <script src="JS/datos-pedido.js" defer></script>
 </head>
@@ -125,6 +128,16 @@
                         y podrás enviarnos la información por WhatsApp
                         para confirmar los detalles.
                     </p>
+                </div>
+
+                <div class="campo">
+                    <label>
+                        <input type="checkbox" id="consentimiento-datos" name="consentimiento-datos" required>
+                        Autorizo el uso de mis datos de contacto para registrar y dar seguimiento a este pedido.
+                    </label>
+                    <small>
+                        Los datos se envían a Google Apps Script y WhatsApp únicamente para procesar tu solicitud.
+                    </small>
                 </div>
 
                 <!-- Botón -->
